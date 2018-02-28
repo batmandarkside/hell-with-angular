@@ -1,2 +1,6 @@
-<button>{text}</button>
+.button-component {
+  border: 1px solid red;
+  padding: 5px 10px;
+  font-size: 14px;
+}
 
