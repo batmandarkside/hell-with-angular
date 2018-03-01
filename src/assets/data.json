@@ -1,3 +1,58 @@
-{
-  "value": "AngularClass"
-}
+[
+  {
+    "id": 6,
+    "name": "Capitan America",
+    "alterEgo": "Steven Grant Rogers",
+    "likes": 1449,
+    "default": true
+  },
+  {
+    "id": 1,
+    "name": "Spiderman",
+    "alterEgo": "Peter Parker",
+    "likes": 2983,
+    "default": true
+  },
+  {
+    "id": 8,
+    "name": "Deadpool",
+    "alterEgo": "Wade Winston Wilson",
+    "likes": 15521,
+    "default": true
+  },
+  {
+    "id": 3,
+    "name": "Batman",
+    "alterEgo": "Bruce Wayne",
+    "likes": 928,
+    "default": true
+  },
+  {
+    "id": 2,
+    "name": "Superman",
+    "alterEgo": "Clark Kent",
+    "likes": 928,
+    "default": true
+  },
+  {
+    "id": 7,
+    "name": "Hulk",
+    "alterEgo": "Bruce Banner",
+    "likes": 999,
+    "default": true
+  },
+  {
+    "id": 5,
+    "name": "Iron man",
+    "alterEgo": "Tony Stark",
+    "likes": 1082,
+    "default": true
+  },
+  {
+    "id": 4,
+    "name": "Wonder woman",
+    "alterEgo": "Diana Prince",
+    "likes": 4335,
+    "default": true
+  }
+]

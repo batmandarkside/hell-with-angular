@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { MatMenuModule } from '@angular/material/menu';
 import { AppState } from './app.service';
 
 @Component({

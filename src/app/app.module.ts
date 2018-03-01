@@ -1,11 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatInputModule,
+  MatListModule,
+  MatCardModule,
+  ShowOnDirtyErrorStateMatcher
+} from '@angular/material';
+import { ErrorStateMatcher } from '@angular/material/core';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from '../containers/home';
+import { HeroDetailComponent } from '../containers/home/hero-detail';
 import { ContactsPageComponent } from '../containers/contacts';
 import { NoContentComponent } from '../containers/no-content';
 
@@ -30,19 +41,31 @@ interface StoreType {
     AppComponent,
     HomePageComponent,
     ContactsPageComponent,
-    NoContentComponent
+    NoContentComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatCardModule,
+    MatListModule,
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules
     }),
   ],
   providers: [
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    {
+      provide: ErrorStateMatcher,
+      useClass: ShowOnDirtyErrorStateMatcher
+    }
   ],
   bootstrap: [AppComponent]
 })

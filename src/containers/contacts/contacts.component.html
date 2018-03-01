@@ -1,4 +1,33 @@
 <div>
   <h2>{{containerName}}</h2>
+
+  <div>
+    <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          placeholder="Email"
+          [formControl]="emailFormControl"
+          [value]="localState.value"
+          (input)="onInput($event.target.value)"
+          [errorStateMatcher]="matcher">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <button
+        [disabled]="formDisable"
+        mat-raised-button
+        color="accent">Submit Value</button>
+    </form>
+    <mat-card class="local-state">
+      <pre>this.localState = {{ localState | json }}</pre>
+    </mat-card>
+  </div>
+
 </div>
 

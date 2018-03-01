@@ -1,4 +1,23 @@
-nav a {
-  display: inline-block;
-  padding: 4px;
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+ul, li, ol {
+  list-style: none;
+}
+
+.main-container {
+  padding: 50px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo {
+  padding-right: 40px;
+}
+
+.global-state {
+  margin: 20px 0;
 }

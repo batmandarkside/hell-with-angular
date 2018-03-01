@@ -1,31 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-
 import { AppState } from '../../app/app.service';
-import { Title } from './title';
+import { Heroes } from './hero/heroes.service';
+import { Hero } from './hero/hero';
 
 @Component({
   selector: 'app-home-container',
   providers: [
-    Title
+    Heroes
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomePageComponent implements OnInit {
   containerName = 'Home container';
-  public localState = { value: '' };
+  listHeroes: Array<Hero> = [];
+  selectedHero: Hero;
   constructor(
     public appState: AppState,
-    public title: Title
+    public heroes: Heroes
   ) {}
 
   public ngOnInit() {
-    console.log('====== Home container init ======');
+    this.heroes.getData().subscribe((heroes: Array<Hero>) => {
+      this.listHeroes = heroes.sort((a, b) => {
+        return b.likes - a.likes;
+      });
+    });
   }
 
-  public submitState(value: string) {
-    console.log('submitState', value);
-    this.appState.set('value', value);
-    this.localState.value = '';
+  public onSelect(hero: Hero): void {
+    this.selectedHero = hero;
   }
 }

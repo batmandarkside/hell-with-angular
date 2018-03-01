@@ -2,16 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class Title {
-  public value = 'Angular 2';
-
+export class Heroes {
   constructor(
     public http: HttpClient
   ) { }
 
   public getData() {
-    console.log('Title#getData(): Get Data');
+    console.log('Heroes#getData(): Get Data');
     return this.http.get('/assets/data.json');
   }
-
 }

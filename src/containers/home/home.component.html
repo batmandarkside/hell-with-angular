@@ -1,16 +1,20 @@
 <div>
   <h2>{{containerName}}</h2>
-  <div>
-    <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
-      <input
-        [value]="localState.value"
-        (input)="localState.value = $event.target.value"
-        placeholder="Submit Local State to App State"
-        autofocus>
+  <div class="heroes-container">
+    <div class="hero-list">
+      <h4>hero list</h4>
+      <mat-nav-list>
+        <mat-list-item
+          *ngFor="let hero of listHeroes"
+          [class.selected]="hero === selectedHero"
+          (click)="onSelect(hero)">
+          <span class="hero-list__item-id">{{hero.id}}</span>
+          <span class="hero-list__item-name">{{hero.name}}</span>
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
 
-      <button>Submit Value</button>
-    </form>
-    <pre>this.localState = {{ localState | json }}</pre>
+    <app-hero-detail [hero]="selectedHero"></app-hero-detail>
   </div>
 </div>
 

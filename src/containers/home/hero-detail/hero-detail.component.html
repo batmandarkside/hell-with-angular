@@ -1,0 +1,15 @@
+<mat-card *ngIf="hero" class="hero-detail-component">
+  <mat-card-title>{{ hero.name | uppercase }} Details</mat-card-title>
+  <mat-card-content>
+    <div>
+      <mat-form-field>
+        <input
+          [(ngModel)]="hero.name"
+          [value]="hero.name"
+          matInput
+          autofocus
+          placeholder="name" />
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+</mat-card>
